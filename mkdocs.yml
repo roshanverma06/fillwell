@@ -78,8 +78,8 @@ markdown_extensions:
 
 # To keep internal docs off a PUBLIC site, uncomment and list them here
 # (they stay in the repo, they just aren't published):
-# exclude_docs: |
-#   design/threat-model.md
+exclude_docs: |
+  design/threat-model.md
 
 nav:
   - Home: index.md
