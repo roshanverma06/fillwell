@@ -1,0 +1,21 @@
+# Who must approve changes to which files.
+# Replace the @usernames below with your teammates' GitHub usernames.
+# Later lines win over earlier ones.
+
+# Default: any change needs the tech lead or product lead
+*                         @roshanverma06
+
+# Product docs: product lead
+/docs/product/            @roshanverma06
+/docs/research/           @roshanverma06
+
+# Architecture, security, decisions: tech lead
+/docs/design/             @roshanverma06
+/docs/adr/                @roshanverma06
+
+# Planning: product lead + tech lead
+/docs/planning/           @roshanverma06
+
+# Docs site config and CI
+/mkdocs.yml               @roshanverma06
+/.github/                 @roshanverma06

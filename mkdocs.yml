@@ -1,0 +1,113 @@
+site_name: Fillwell Docs
+site_description: Product, design and engineering documentation for Fillwell — autofill you can trust.
+site_author: Fillwell team
+
+# Change these if the repo lives under an organization or a different name.
+repo_name: roshanverma06/fillwell
+repo_url: https://github.com/roshanverma06/fillwell
+edit_uri: edit/main/docs/
+
+copyright: Fillwell · Internal documentation
+
+theme:
+  name: material
+  language: en
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.action.edit      # "Edit this page" button
+    - content.action.view      # "View source" button
+    - content.code.copy
+    - toc.follow
+
+plugins:
+  - search
+  # Shows "Last update" / "Created" dates on every page, from git history.
+  - git-revision-date-localized:
+      type: date
+      enable_creation_date: true
+      fallback_to_build_date: true
+  # Shows who edited each page, from git history.
+  - git-authors:
+      show_contribution: true
+      show_line_count: false
+      fallback_to_empty: true
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+# To keep internal docs off a PUBLIC site, uncomment and list them here
+# (they stay in the repo, they just aren't published):
+# exclude_docs: |
+#   design/threat-model.md
+
+nav:
+  - Home: index.md
+  - Product:
+      - PRD: product/prd.md
+      - Feature list: product/feature-list.md
+      - Competitive landscape: research/competitive-landscape.md
+  - Design:
+      - Technical design: design/technical-design.md
+      - Threat model: design/threat-model.md
+      - Privacy & data handling: design/privacy-data-handling.md
+  - Decisions (ADRs):
+      - adr/index.md
+      - "001 Extension framework": adr/001-extension-framework.md
+      - "002 Backend: FastAPI": adr/002-backend-fastapi.md
+      - "003 Postgres + pgvector": adr/003-postgres-pgvector.md
+      - "004 LLM & embeddings": adr/004-llm-and-embeddings.md
+      - "005 Auth": adr/005-auth.md
+      - "006 Hosting: AWS": adr/006-hosting-aws.md
+      - "007 Monorepo": adr/007-monorepo.md
+      - "008 Product guardrails": adr/008-product-guardrails.md
+  - Planning:
+      - Roadmap: planning/roadmap.md
+      - MVP backlog: planning/mvp-backlog.md
+      - Test plan: planning/test-plan.md
+  - Engineering:
+      - Contributing: engineering/contributing.md
+      - Repo README draft: engineering/repo-readme-draft.md
+  - About these docs:
+      - How to edit: how-to-edit.md
+      - Docs changelog: changelog.md
